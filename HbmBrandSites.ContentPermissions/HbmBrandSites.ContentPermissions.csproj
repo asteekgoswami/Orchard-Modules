@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>$(VersionNumber)</Version>
+    <PackageId>Etch.OrchardCore.ContentPermissions</PackageId>
+    <Title>Content Permissions</Title>
+    <Authors>Etch UK Ltd.</Authors>
+    <Description>Module for Orchard Core to enable configuring security per content item.</Description>
+    <PackageTags>orchardcore;etchuk</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OrchardCore.ContentManagement" Version="2.1.3" />
+    <PackageReference Include="OrchardCore.ContentManagement.Display" Version="2.1.3" />
+    <PackageReference Include="OrchardCore.ContentTypes" Version="2.1.3" />
+    <PackageReference Include="OrchardCore.DisplayManagement" Version="2.1.3" />
+    <PackageReference Include="OrchardCore.Indexing" Version="2.1.3" />
+    <PackageReference Include="OrchardCore.ResourceManagement" Version="2.1.3" />
+    <PackageReference Include="OrchardCore.Module.Targets" Version="2.1.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+</Project>
