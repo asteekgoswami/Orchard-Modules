@@ -13,6 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="OrchardCore.ContentFields" Version="2.1.3" />
     <PackageReference Include="OrchardCore.ContentManagement" Version="2.1.3" />
     <PackageReference Include="OrchardCore.ContentManagement.Display" Version="2.1.3" />
     <PackageReference Include="OrchardCore.ContentTypes" Version="2.1.3" />
@@ -20,10 +21,17 @@
     <PackageReference Include="OrchardCore.Indexing" Version="2.1.3" />
     <PackageReference Include="OrchardCore.ResourceManagement" Version="2.1.3" />
     <PackageReference Include="OrchardCore.Module.Targets" Version="2.1.3" />
+    <PackageReference Include="OrchardCore.Title" Version="2.1.3" />
   </ItemGroup>
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\ContentPermissionSettings - Copy.Edit.cshtml">
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

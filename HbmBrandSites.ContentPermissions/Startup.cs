@@ -13,6 +13,8 @@ using OrchardCore.Indexing;
 using OrchardCore.Liquid;
 using OrchardCore.Modules;
 using YesSql.Indexes;
+using OrchardCore.Navigation;
+using OrchardCore.DisplayManagement.Handlers;
 
 namespace HbmBrandSites.ContentPermissions
 {
@@ -20,6 +22,8 @@ namespace HbmBrandSites.ContentPermissions
     {
         public override void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<INavigationProvider, AdminMenu>();
+            services.AddSiteDisplayDriver<ContentPermissionSettingDisplayDriver>();
             services.AddScoped<IContentPermissionsService, ContentPermissionsService>();
             
             services.AddContentPart<ContentPermissionsPart>().UseDisplayDriver<ContentPermissionsDisplay>();
@@ -28,10 +32,14 @@ namespace HbmBrandSites.ContentPermissions
             services.AddScoped<IContentTypePartDefinitionDisplayDriver, ContentPermissionsPartSettingsDisplayDriver>();
 
             services.AddLiquidFilter<UserCanViewFilter>("user_can_view");
+            services.AddLiquidFilter<GetContentByTypenandDisplayText>("get_content_by_type_and_displaytext");
 
             services.AddScoped<IDataMigration, Migrations>();
 
             services.AddScoped<IContentPartIndexHandler, ContentPermissionsPartIndexHandler>();
+
+
+            services.AddScoped<IContentPermissionSettingService, ContentPermissionSettingService>();
         }
     }
 }
